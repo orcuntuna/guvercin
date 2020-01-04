@@ -10,5 +10,9 @@
   "license": "ISC",
   "devDependencies": {
     "electron": "^7.1.7"
+  },
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.4.1"
   }
 }
