@@ -1,4 +1,53 @@
+*{
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
 .navbar .nav .nav-item a{
     color: #eee;
     padding: .5rem 0.7rem;
+}
+
+#request-alert{
+    display: none;
+}
+
+#props .tabs .tab{
+    display: none;
+    padding-top: 20px;
+}
+
+.list .item{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 8px;
+}
+
+.list .item .key{
+    flex: 1;
+    margin-right: 10px;
+}
+
+.list .item .value{
+    flex: 2;
+    margin-right: 10px;
+}
+
+.list .item .operation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list .item .operation button{
+    height: auto;
+    border: none;
+    padding: .3rem .7rem;
+}
+
+.list .item input[type="text"]{
+    height: auto;
+    padding: .325rem .5rem;
+    font-size: 15px;
+    border-radius: 3px;
 }

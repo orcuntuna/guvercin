@@ -13,7 +13,9 @@
   },
   "dependencies": {
     "bootstrap": "^4.4.1",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
+    "sweetalert2": "^9.5.4",
     "validate.js": "^0.13.1"
   }
 }

@@ -5,6 +5,8 @@
     <title>Guvercin</title>
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css" />
     <link rel="stylesheet" href="../styles/home.css" />
     <script>window.$ = window.jQuery = require('../node_modules/jquery/dist/jquery.min.js');</script>
   </head>
@@ -43,19 +45,49 @@
             </div>
             <input id="url" type="text" class="form-control" placeholder="Request URL" />
             <div class="input-group-append">
-              <button id="send" class="btn btn-primary">SEND</button>
+              <button id="send" class="btn btn-primary"><i class="fa fa-paper-plane px-3"></i></button>
             </div>
           </div>
         </form>
       </div>
 
-      <div class="alert alert-danger alert-dismissible fade" id="request-alert">
+      <div class="alert alert-danger alert-dismissible fade show" id="request-alert">
         <span class="message"></span>
         <button type="button" class="close" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
 
+    </section>
+    
+    <section id="props" class="px-3">
+      <div class="row">
+        <div class="col-12">
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" tab="params" href="#">Parameters</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" tab="headers" href="#">Headers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" tab="body" href="#">Body</a>
+            </li>
+          </ul>
+          <div class="tabs">
+            <div class="tab" id="tab-params" tab="params">
+              <div class="list">
+              </div>
+            </div>
+            <div class="tab" tab="headers">
+              headers
+            </div>
+            <div class="tab" tab="body">
+              body
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
