@@ -8,8 +8,7 @@ const parameter_template = `<div class="item">
   <input type="text" class="form-control" name="params_value[]" placeholder="Parameter Value"/>
 </div>
 <div class="operation">
-  <button class="btn btn-danger delete_param mr-1"><i class="fa fa-trash"></i></button>
-  <button class="btn btn-success add_param"><i class="fa fa-plus"></i></button>
+  <button class="btn btn-delete delete_param"><i class="fa fa-trash"></i></button>
 </div>
 </div>`;
 

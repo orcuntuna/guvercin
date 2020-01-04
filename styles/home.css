@@ -1,15 +1,93 @@
 *{
     outline: 0 !important;
+}
+
+body{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15px;
+}
+
+input, button, select, a{
     box-shadow: none !important;
 }
 
+.logo{
+    color: #7158e2;
+    font-weight: 500;
+}
+
+.top{
+    width: 100%;
+    height: 10px;
+    background: #12c2e9;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #fb8817, #ff4b01, #c12127, #e02aff);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fb8817, #ff4b01, #c12127, #e02aff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.navbar{
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
 .navbar .nav .nav-item a{
-    color: #eee;
+    color: #333;
     padding: .5rem 0.7rem;
 }
 
 #request-alert{
     display: none;
+}
+
+#props .nav-tabs{
+    display: flex;
+}
+
+#props .nav-tabs .nav-item{
+    flex: 1;
+    text-align: center;
+}
+
+#props .nav-tabs .nav-link{
+    border: 0;
+}
+
+#props .nav-tabs .nav-params{
+    border-bottom: 3px solid #6c5ce7;
+}
+
+#props .nav-tabs .nav-params .active{
+    background-color: #a29bfe60;
+    font-weight: 600;
+}
+
+#props .nav-tabs .nav-params a{
+    color: #6c5ce7;
+}
+
+#props .nav-tabs .nav-requests{
+    border-bottom: 3px solid #e17055;
+}
+
+#props .nav-tabs .nav-requests a{
+    color: #d63031;
+}
+
+#props .nav-tabs .nav-requests .active{
+    background-color: #ff767550;
+    font-weight: 600;
+}
+
+#props .nav-tabs .nav-body{
+    border-bottom: 3px solid #00b894;
+}
+
+#props .nav-tabs .nav-body .active{
+    background-color: #55efc450;
+    font-weight: 600;
+}
+
+#props .nav-tabs .nav-body a{
+    color: #00b894;
 }
 
 #props .tabs .tab{
@@ -21,6 +99,7 @@
     display: flex;
     flex-direction: row;
     margin-bottom: 8px;
+    position: relative;
 }
 
 .list .item .key{
@@ -30,7 +109,6 @@
 
 .list .item .value{
     flex: 2;
-    margin-right: 10px;
 }
 
 .list .item .operation{
@@ -50,4 +128,40 @@
     padding: .325rem .5rem;
     font-size: 15px;
     border-radius: 3px;
+    font-weight: 400;
+}
+
+.list .item input[type="text"]::placeholder{
+    font-weight: 300;
+}
+
+#send{
+    color: #fff;
+    background: #333;
+}
+
+.btn-add{
+    background-color: #1e90ff;
+    color: #fff;
+}
+
+.operation{
+    position: absolute;
+    right: 14px;
+    top: 5px;
+}
+
+.btn-delete{
+    padding: 0 !important;
+    margin: 0;
+    color: #a0a0a0;
+}
+
+.btn-delete:hover{
+    transition: 0.4s;
+    color: #d63031;
+}
+
+#method-select{
+    background-color: #f9f9f9;
 }
