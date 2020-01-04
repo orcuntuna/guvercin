@@ -2,13 +2,64 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>Guvercin</title>
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../styles/home.css" />
     <script>window.$ = window.jQuery = require('../node_modules/jquery/dist/jquery.min.js');</script>
   </head>
   <body>
 
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">
+        <img src="../images/logo-light.png" width="30" height="30" class="d-inline-block align-top mr-2" alt="Guvercin">
+        Güvercin
+      </a>
+      <ul class="nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Request</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Collection</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">History</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="request-bar px-3 mt-4">
+      <div class="row">
+        <form class="col-12" id="request-form">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <select class="custom-select" id="method-select">
+                <option value="GET">GET</option>
+                <option value="POST">POST</option>
+                <option value="PUT">PUT</option>
+                <option value="DELETE">DELETE</option>
+                <option value="PATCH">PATCH</option>
+              </select>
+            </div>
+            <input id="url" type="text" class="form-control" placeholder="Request URL" />
+            <div class="input-group-append">
+              <button id="send" class="btn btn-primary">SEND</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="alert alert-danger alert-dismissible fade" id="request-alert">
+        <span class="message"></span>
+        <button type="button" class="close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+    </section>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../node_modules/validate.js/validate.min.js"></script>
     <script src="../renderers/home.js"></script>
 
   </body>
