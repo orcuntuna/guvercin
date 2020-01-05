@@ -8,7 +8,8 @@ function createWindow () {
     height: 600,
     webPreferences: {
       nodeIntegration: true
-    }
+    },
+    icon: __dirname + "./images/logo.png"
   })
   win.loadFile('pages/home.html')
 

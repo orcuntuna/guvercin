@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css" />
     <link rel="stylesheet" href="../styles/home.css" />
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700&display=swap" rel="stylesheet" />
     <script>window.$ = window.jQuery = require('../node_modules/jquery/dist/jquery.min.js');</script>
   </head>
   <body>
@@ -17,7 +17,7 @@
 
     <nav class="navbar">
       <a class="navbar-brand" href="#">
-        <img src="../images/logo-purple.png" width="30" height="30" class="d-inline-block align-top mr-2" alt="Guvercin">
+        <img src="../images/logo.png" width="30" height="30" class="d-inline-block align-top mr-2" alt="Guvercin">
         <span class="logo">Güvercin</span>
       </a>
       <ul class="nav">
@@ -44,6 +44,7 @@
                 <option value="PUT">PUT</option>
                 <option value="DELETE">DELETE</option>
                 <option value="PATCH">PATCH</option>
+                <option value="custom">CUSTOM</option>
               </select>
             </div>
             <input id="url" type="text" class="form-control" placeholder="Request URL" />
@@ -63,35 +64,41 @@
 
     </section>
     
-    <section id="props" class="px-3">
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-12">
-          <ul class="nav nav-tabs">
-            <li class="nav-item nav-params">
-              <a class="nav-link active" tab="params" href="#">Parameters</a>
-            </li>
-            <li class="nav-item nav-requests">
-              <a class="nav-link" tab="headers" href="#">Headers</a>
-            </li>
-            <li class="nav-item nav-body">
-              <a class="nav-link" tab="body" href="#">Body</a>
-            </li>
-          </ul>
-          <div class="tabs">
-            <div class="tab" id="tab-params" tab="params">
-              <div class="list">
+        <div class="col-lg-6">
+          <section id="props" class="mt-1">
+            <div class="row">
+              <div class="col-12">
+                <ul class="nav nav-tabs">
+                  <li class="nav-item nav-params">
+                    <a class="nav-link active" tab="params" href="#">Parameters</a>
+                  </li>
+                  <li class="nav-item nav-requests">
+                    <a class="nav-link" tab="headers" href="#">Headers</a>
+                  </li>
+                  <li class="nav-item nav-body">
+                    <a class="nav-link" tab="body" href="#">Body</a>
+                  </li>
+                </ul>
+                <div class="tabs">
+                  <div class="tab" id="tab-params" tab="params">
+                    <div class="list">
+                    </div>
+                  </div>
+                  <div class="tab" tab="headers">
+                    headers
+                  </div>
+                  <div class="tab" tab="body">
+                    body
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="tab" tab="headers">
-              headers
-            </div>
-            <div class="tab" tab="body">
-              body
-            </div>
-          </div>
+          </section>
         </div>
       </div>
-    </section>
+    </div>
 
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../node_modules/validate.js/validate.min.js"></script>

@@ -2,10 +2,10 @@ const Swal = require('sweetalert2');
 
 const parameter_template = `<div class="item">
 <div class="key">
-  <input type="text" class="form-control" name="params_key[]" placeholder="Parameter Key"/>
+  <input type="text" class="form-control params_key" name="params_key[]" placeholder="Parameter Key"/>
 </div>
 <div class="value">
-  <input type="text" class="form-control" name="params_value[]" placeholder="Parameter Value"/>
+  <input type="text" class="form-control params_value" name="params_value[]" placeholder="Parameter Value"/>
 </div>
 <div class="operation">
   <button class="btn btn-delete delete_param"><i class="fa fa-trash"></i></button>
@@ -21,6 +21,13 @@ function validateURL(){
     }
 }
 
+function checkParamsAndAdd(){
+    var params = $("#tab-params .list input.params_key");
+    if($(params[params.length-1]).val()){
+        $("#tab-params .list").append(parameter_template);
+    }
+}
+
 $(function(){
 
     var active_tab_name = $("#props .nav-tabs .active").attr("tab");
@@ -29,6 +36,26 @@ $(function(){
     $("#tab-params .list").append(parameter_template);
     $("#tab-params .list").append(parameter_template);
     $("#tab-params .list").append(parameter_template);
+
+    $("#tab-params .list").on("change", "input.params_key", function(e){
+        checkParamsAndAdd();
+    });
+
+    $("#method-select").on("change", async function(e){
+        console.log("aa");
+        if($("#method-select").val() == "custom"){
+            const { value: method } = await Swal.fire({
+                title: 'Create Custom Method',
+                input: 'text',
+                inputPlaceholder: 'Enter your custom method name',
+                showCancelButton: true
+            });
+            if (method) {
+                $("#method-select").append('<option>'+method+'</option>');
+                $("#method-select option:last").attr("selected", "selected");
+            }
+        }
+    });
 
     $("#method-list a").on("click", function(e){
         e.preventDefault();
