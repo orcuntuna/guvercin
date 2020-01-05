@@ -1,4 +1,5 @@
 const Swal = require('sweetalert2');
+const ace = require('ace-builds/src/ace');
 
 const parameter_template = `<div class="item">
 <div class="key">
@@ -11,6 +12,8 @@ const parameter_template = `<div class="item">
   <button class="btn btn-delete delete_param"><i class="fa fa-trash"></i></button>
 </div>
 </div>`;
+
+var body_editor;
 
 function validateURL(){
     var url = $("#url").val();
@@ -28,6 +31,7 @@ function checkParamsAndAdd(){
     }
 }
 
+
 $(function(){
 
     var active_tab_name = $("#props .nav-tabs .active").attr("tab");
@@ -39,6 +43,20 @@ $(function(){
 
     $("#tab-params .list").on("change", "input.params_key", function(e){
         checkParamsAndAdd();
+    });
+
+    body_editor = ace.edit("body-editor");
+    var JSONMode = require("ace-builds/src/mode-json").Mode;
+    body_editor.session.setMode(new JSONMode());
+    body_editor.setTheme(require('ace-builds/src/theme-eclipse'));
+    body_editor.setFontSize("14px");
+
+    $("#body-editor-theme").on("change", function(e){
+        if($("#body-editor-theme").val() == "light"){
+            body_editor.setTheme(require('ace-builds/src/theme-eclipse'));
+        }else if($("#body-editor-theme").val() == "dark"){
+            body_editor.setTheme(require('ace-builds/src/theme-tomorrow_night_eighties'));
+        }
     });
 
     $("#method-select").on("change", async function(e){

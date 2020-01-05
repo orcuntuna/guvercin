@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Guvercin</title>
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' blob:" />
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css" />
@@ -49,7 +49,8 @@
             </div>
             <input id="url" type="text" class="form-control" placeholder="Request URL" />
             <div class="input-group-append">
-              <button id="send" class="btn"><i class="fa fa-paper-plane px-3"></i></button>
+              <button type="button" id="save" class="btn"><i class="fa fa-bookmark-o px-1"></i></button>
+              <button type="submit" id="send" class="btn"><i class="fa fa-paper-plane px-3"></i></button>
             </div>
           </div>
         </form>
@@ -90,7 +91,24 @@
                     headers
                   </div>
                   <div class="tab" tab="body">
-                    body
+                    <div class="d-flex mb-3">
+                      <select class="custom-select mr-2">
+                        <option>application/json</option>
+                        <option>application/xml</option>
+                        <option>application/form-data</option>
+                        <option>application/text-plain</option>
+                        <option>application/text-html</option>
+                        <option>application/base64</option>
+                        <option>application/x-www-form-urlencoded</option>
+                      </select>
+                      <select class="custom-select" id="body-editor-theme">
+                        <option value="light">Light Theme</option>
+                        <option value="dark">Dark Theme</option>
+                      </select>
+                    </div class="mb-2">
+                    <div class="position-relative">
+                      <div id="body-editor"></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -102,6 +120,7 @@
 
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../node_modules/validate.js/validate.min.js"></script>
+    <script src="../node_modules/ace-builds/src-min/ace.js"></script>
     <script src="../renderers/home.js"></script>
 
   </body>
