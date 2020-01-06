@@ -52,15 +52,41 @@ $(function(){
     body_editor.setFontSize("14px");
 
     $("#body-editor-theme").on("change", function(e){
-        if($("#body-editor-theme").val() == "light"){
-            body_editor.setTheme(require('ace-builds/src/theme-eclipse'));
-        }else if($("#body-editor-theme").val() == "dark"){
-            body_editor.setTheme(require('ace-builds/src/theme-tomorrow_night_eighties'));
+        switch ($("#body-editor-theme").val()) {
+            case "light":
+                body_editor.setTheme(require('ace-builds/src/theme-eclipse'));
+                break;
+            case "dark":
+                body_editor.setTheme(require('ace-builds/src/theme-tomorrow_night_eighties'));
+                break;
+            default:
+                break;
         }
     });
 
+    $("#body-content-type").on("change", function(e){
+        var mode;
+        switch ($("#body-content-type").val()) {
+            case "application/json":
+                mode = require("ace-builds/src/mode-json").Mode;
+                break;
+            case "application/xml":
+                mode = require("ace-builds/src/mode-xml").Mode;
+                break;
+            case "application/text-plain":
+                mode = require("ace-builds/src/mode-plain_text").Mode;
+                break;
+            case "application/text-html":
+                mode = require("ace-builds/src/mode-html").Mode;
+                break;
+            default:
+                mode = require("ace-builds/src/mode-plain_text").Mode;
+                break;
+        }
+        body_editor.session.setMode(new mode());
+    });
+
     $("#method-select").on("change", async function(e){
-        console.log("aa");
         if($("#method-select").val() == "custom"){
             const { value: method } = await Swal.fire({
                 title: 'Create Custom Method',
