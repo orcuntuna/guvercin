@@ -48,13 +48,13 @@ $(function(){
     body_editor = ace.edit("body-editor");
     var JSONMode = require("ace-builds/src/mode-json").Mode;
     body_editor.session.setMode(new JSONMode());
-    body_editor.setTheme(require('ace-builds/src/theme-eclipse'));
+    body_editor.setTheme(require('ace-builds/src/theme-xcode'));
     body_editor.setFontSize("14px");
 
     $("#body-editor-theme").on("change", function(e){
         switch ($("#body-editor-theme").val()) {
             case "light":
-                body_editor.setTheme(require('ace-builds/src/theme-eclipse'));
+                body_editor.setTheme(require('ace-builds/src/theme-xcode'));
                 break;
             case "dark":
                 body_editor.setTheme(require('ace-builds/src/theme-tomorrow_night_eighties'));
