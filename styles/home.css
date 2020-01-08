@@ -61,9 +61,13 @@ input, button, select, a{
     border: 1px solid transparent;
     border-top: 3px solid transparent;
     border-radius: 3px 3px 0 0;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
     color: #586069;
+}
+
+#props .nav-tabs .nav-link i{
+    margin-right: 6px;
 }
 
 #props .nav-tabs .nav-link.active{
@@ -157,7 +161,8 @@ input, button, select, a{
 }
 
 .list .item input[type="text"]::placeholder{
-    font-weight: 300;
+    font-weight: 400;
+    color: #a0a0a0;
 }
 
 #send{
