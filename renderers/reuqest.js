@@ -129,19 +129,27 @@ $(function(){
     });
 
     $("#tab-params .list").on("click", ".delete_param", function(e){
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            showCancelButton: true,
-            confirmButtonColor: '#d33',
-            cancelButtonColor: '#aaa',
-            confirmButtonText: 'Delete Parameter',
-            cancelButtonText: 'Cancel'
-        }).then((result) => {
-            if (result.value) {
+        if($("#tab-params .list .item").length > 1){
+            if($(this).parent().parent().find(".params_key").val()){
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#aaa',
+                    confirmButtonText: 'Delete Parameter',
+                    cancelButtonText: 'Cancel'
+                }).then((result) => {
+                    if (result.value) {
+                        $(this).parent().parent().remove();
+                    }
+                });
+            }else{
                 $(this).parent().parent().remove();
             }
-        });
+        }else{
+            Swal.fire("Warning", "You cant delete last parameter, maybe you need it.", "warning");
+        }
     });
 
 });
