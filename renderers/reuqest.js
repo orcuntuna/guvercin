@@ -10,6 +10,21 @@ const parameter_template = `<div class="item">
 </div>
 </div>`;
 
+const header_template = `
+<div class="item">
+    <div class="key">
+        <input type="text" class="form-control params_key" name="headers_key[]" placeholder="Header Key"/>
+    </div>
+    <div class="value">
+        <input type="text" class="form-control params_value" name="headerS_value[]" placeholder="Header Value"/>
+    </div>
+    <div class="operation">
+        <button class="btn btn-delete delete_header"><i class="fa fa-trash"></i></button>
+    </div>
+</div>
+`;
+
+
 var body_editor;
 
 function validateURL(){
@@ -28,6 +43,13 @@ function checkParamsAndAdd(){
     }
 }
 
+function checkHeadersAndAdd() {
+    var header = $("#tab-headers .header-list input.params_key");
+    if ($(header[header.length-1]).val()) {
+        $("#tab-headers .header-list").append(header_template);
+    }
+}
+
 $(function(){
 
     var active_tab_name = $("#props .nav-tabs .active").attr("tab");
@@ -36,9 +58,16 @@ $(function(){
     $("#tab-params .list").append(parameter_template);
     $("#tab-params .list").append(parameter_template);
     $("#tab-params .list").append(parameter_template);
+    $("#tab-headers .header-list").append(header_template);
+    $("#tab-headers .header-list").append(header_template);
+    $("#tab-headers .header-list").append(header_template);
 
     $("#tab-params .list").on("change", "input.params_key", function(e){
         checkParamsAndAdd();
+    });
+
+    $("#tab-headers .header-list").on("change", "input.params_key", function(e){
+        checkHeadersAndAdd();
     });
 
     body_editor = ace.edit("body-editor");
@@ -149,6 +178,30 @@ $(function(){
             }
         }else{
             Swal.fire("Warning", "You cant delete last parameter, maybe you need it.", "warning");
+        }
+    });
+
+    $("#tab-headers .header-list").on("click", ".delete_header", function(e){
+        if($("#tab-headers .header-list .item").length > 1){
+            if($(this).parent().parent().find(".header_key").val()){
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#aaa',
+                    confirmButtonText: 'Delete Parameter',
+                    cancelButtonText: 'Cancel'
+                }).then((result) => {
+                    if (result.value) {
+                        $(this).parent().parent().remove();
+                    }
+                });
+            }else{
+                $(this).parent().parent().remove();
+            }
+        }else{
+            Swal.fire("Warning", "You cant delete last header, maybe you need it.", "warning");
         }
     });
 

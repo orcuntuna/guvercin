@@ -124,6 +124,7 @@ input, button, select, a{
     padding-top: 20px;
 }
 
+.header-list .item,
 .list .item{
     display: flex;
     flex-direction: row;
@@ -131,27 +132,32 @@ input, button, select, a{
     position: relative;
 }
 
+.header-list .item .key,
 .list .item .key{
     flex: 1;
     margin-right: 10px;
 }
 
+.header-list .item .value,
 .list .item .value{
     flex: 2;
 }
 
+.header-list .item .operation,
 .list .item .operation{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.header-list .item .operation button,
 .list .item .operation button{
     height: auto;
     border: none;
     padding: .3rem .7rem;
 }
 
+.header-list .item input[type="text"],
 .list .item input[type="text"]{
     height: auto;
     padding: .325rem .5rem;
@@ -160,6 +166,7 @@ input, button, select, a{
     font-weight: 400;
 }
 
+.header-list .item input[type="text"]::placeholder,
 .list .item input[type="text"]::placeholder{
     font-weight: 400;
     color: #a0a0a0;
