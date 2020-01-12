@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css" />
     <link rel="stylesheet" href="../styles/home.css" />
+    <link rel="stylesheet" href="../styles/empty.css" id="theme-link" />
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700&display=swap" rel="stylesheet" />
     <script>window.$ = window.jQuery = require('../node_modules/jquery/dist/jquery.min.js');</script>
   </head>
@@ -17,7 +18,11 @@
     <div class="top"></div>
 
     <div id="drawer">
-        <span>settings bar</span>
+      <select class="custom-select" name="theme" id="theme">
+        <option value="light">Light Theme</option>
+        <option value="dark">Dark Theme</option>
+        <option value="colorful">Colorful Theme</option>
+      </select>
     </div>
 
     <nav class="navbar">
@@ -44,7 +49,7 @@
       </ul>
     </nav>
 
-    <section class="request-bar px-3 mt-4">
+    <section class="request-bar px-3 pt-4">
       <div class="row">
         <form class="col-12" id="request-form">
           <div class="input-group mb-3">
