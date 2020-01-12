@@ -61,10 +61,12 @@ $(function(){
             }).then(data => {
                 response.data = data;
                 console.log(response);
+                response_editor.setValue(data);
+                response_editor.clearSelection();
             }).catch(err => {
                 console.log(err);
             });
-            
+
         }else{
             $("#request-alert span.message").html("<strong>Hata!</strong> Girdğiniz istek adresi geçerli bir URL değil.");
             $("#request-alert").show()
