@@ -28,7 +28,7 @@ npm start
 👤 **Orcun Tuna**
 
 * Website: https://www.arkkod.com/
-* Twitter: [@\_tunaorcun](https://twitter.com/\_tunaorcun)
+* Twitter: [@\_tunaorcun](https://twitter.com/orcuntuna\_)
 * Github: [@orcuntuna](https://github.com/orcuntuna)
 
 👤 **Murat Ahmet Korkmaz**
