@@ -82,7 +82,10 @@ $(function(){
         checkHeadersAndAdd();
     });
 
-    body_editor = ace.edit("body-editor");
+    body_editor = ace.edit("body-editor", {
+        minLines: 15,
+        maxLines: 9999
+    });
     var JSONMode = require("ace-builds/src/mode-json").Mode;
     body_editor.session.setMode(new JSONMode());
     body_editor.setTheme(require('ace-builds/src/theme-xcode'));
