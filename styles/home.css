@@ -43,7 +43,7 @@ input, button, select, a{
     display: none;
 }
 
-#props .nav-tabs{
+.custom-tabs{
     display: flex;
     background: #fafbfc;
     margin-left: -15px;
@@ -51,12 +51,12 @@ input, button, select, a{
     padding-left: 15px;
 }
 
-#props .nav-tabs .nav-item{
+.custom-tabs .nav-item{
     /*flex: 1;*/
     text-align: center;
 }
 
-#props .nav-tabs .nav-link{
+.custom-tabs .nav-link{
     border: 0;
     border: 1px solid transparent;
     border-top: 3px solid transparent;
@@ -66,60 +66,22 @@ input, button, select, a{
     color: #586069;
 }
 
-#props .nav-tabs .nav-link i{
+.custom-tabs .nav-link i{
     margin-right: 6px;
 }
 
-#props .nav-tabs .nav-link.active{
+.custom-tabs .nav-link.active{
     border-color: #e36209 #e1e4e8 transparent;
     color: #24292e;
 }
 
 
-/*
-
-#props .nav-tabs .nav-params{
-    border-bottom: 3px solid #6c5ce7;
-}
-
-#props .nav-tabs .nav-params .active{
-    background-color: #a29bfe60;
-    font-weight: 600;
-}
-
-#props .nav-tabs .nav-params a{
-    color: #6c5ce7;
-}
-
-#props .nav-tabs .nav-requests{
-    border-bottom: 3px solid #e17055;
-}
-
-#props .nav-tabs .nav-requests a{
-    color: #d63031;
-}
-
-#props .nav-tabs .nav-requests .active{
-    background-color: #ff767550;
-    font-weight: 600;
-}
-
-#props .nav-tabs .nav-body{
-    border-bottom: 3px solid #00b894;
-}
-
-#props .nav-tabs .nav-body .active{
-    background-color: #55efc450;
-    font-weight: 600;
-}
-
-#props .nav-tabs .nav-body a{
-    color: #00b894;
-}
-
-*/
-
 #props .tabs .tab{
+    display: none;
+    padding-top: 20px;
+}
+
+#response .tabs .tab{
     display: none;
     padding-top: 20px;
 }
@@ -209,7 +171,7 @@ input, button, select, a{
 }
 
 #drawer{
-    width: 30%;
+    width: 25%;
     min-width: 300px;
     height: calc(100vh - 64px);
     position: absolute;

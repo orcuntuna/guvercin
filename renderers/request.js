@@ -56,8 +56,11 @@ var headerValueSuggests = ["application/EDI-X12","application/EDIFACT","applicat
 
 $(function(){
 
-    var active_tab_name = $("#props .nav-tabs .active").attr("tab");
-    $("#props .tabs .tab[tab='"+active_tab_name+"']").show();
+    var active_tab_name_props = $("#props .nav-tabs .active").attr("tab");
+    $("#props .tabs .tab[tab='"+active_tab_name_props+"']").show();
+
+    var active_tab_name_response = $("#response .nav-tabs .active").attr("tab");
+    $("#response .tabs .tab[tab='"+active_tab_name_response+"']").show();
 
     $("#tab-params .list").append(parameter_template);
     $("#tab-params .list").append(parameter_template);
@@ -161,11 +164,21 @@ $(function(){
     });
 
     $("#props .nav-tabs .nav-item a").on("click", function(e){
+        e.preventDefault();          
         $("#props .nav-link").removeClass("active");
         $(this).addClass("active");
         var tab_name = $(this).attr("tab");
         $("#props .tabs .tab").hide();
         $("#props .tabs .tab[tab='"+tab_name+"']").show();
+    });
+
+    $("#response .nav-tabs .nav-item a").on("click", function(e){
+        e.preventDefault();
+        $("#response .nav-link").removeClass("active");
+        $(this).addClass("active");
+        var tab_name = $(this).attr("tab");
+        $("#response .tabs .tab").hide();
+        $("#response .tabs .tab[tab='"+tab_name+"']").show();
     });
 
     $("#tab-params .list").on("click", ".add_param", function(e){
