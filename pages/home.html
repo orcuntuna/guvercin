@@ -100,7 +100,7 @@
                 </ul>
                 <div class="tabs">
                   <div class="tab" id="tab-params" tab="params">
-                    <div class="list">
+                    <div class="param-list">
                     </div>
                   </div>
                   <div class="tab" id="tab-headers" tab="headers">
@@ -110,13 +110,12 @@
                   <div class="tab" tab="body">
                     <div class="d-flex mb-3">
                       <select class="custom-select mr-2" id="body-content-type">
-                        <option>application/json</option>
-                        <option>application/xml</option>
-                        <option>application/form-data</option>
-                        <option>application/text-plain</option>
-                        <option>application/text-html</option>
-                        <option>application/base64</option>
-                        <option>application/x-www-form-urlencoded</option>
+                        <option>json</option>
+                        <option>xml</option>
+                        <option>form-data</option>
+                        <option>plain text</option>
+                        <option>html</option>
+                        <option>x-www-form-urlencoded</option>
                       </select>
                       <select class="custom-select" id="body-editor-theme">
                         <option value="light">Light Theme</option>
@@ -166,6 +165,7 @@
     <script src="../renderers/home.js"></script>
     <script src="../renderers/request.js"></script>
     <script src="../renderers/settings.js"></script>
+    <script src="../renderers/send.js"></script>
 
   </body>
 </html>
