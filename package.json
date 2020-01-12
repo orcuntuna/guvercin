@@ -19,8 +19,10 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
     "jquery-autocomplete": "^1.2.8",
+    "json-beautify": "^1.1.1",
     "node-fetch": "^2.6.0",
     "sweetalert2": "^9.5.4",
-    "validate.js": "^0.13.1"
+    "validate.js": "^0.13.1",
+    "xml-formatter": "^1.2.0"
   }
 }

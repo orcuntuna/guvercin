@@ -59,10 +59,50 @@ $(function(){
                 response.statusText = res.statusText;
                 return res.text();
             }).then(data => {
+
                 response.data = data;
                 console.log(response);
-                response_editor.setValue(data);
+
+                if(response.headers["content-type"][0].includes("json")){
+                    try{
+                        var json_object = JSON.parse(response.data);
+                        var pretty_json = json_beautify(json_object, null, 2, 100);
+                        response.data = pretty_json;
+                    }catch(err){
+                        console.log(err);
+                    }
+                }
+
+                if(response.headers["content-type"][0].includes("xml")){
+                    try{
+                        var pretty_xml = xml_beautify(response.data);
+                        response.data = pretty_xml;
+                        response.data = response.data.replace(/^\s*\n/gm, ""); 
+                    }catch(err){
+                        console.log(err);
+                    }
+                }
+
+                response_editor.setValue(response.data);
                 response_editor.clearSelection();
+
+                var mode = null;
+                if(response.headers["content-type"][0].includes("json")){
+                    mode = require("ace-builds/src/mode-json").Mode;
+                }else if(response.headers["content-type"][0].includes("xml")){
+                    mode = require("ace-builds/src/mode-xml").Mode;
+                }else if(response.headers["content-type"][0].includes("html")){
+                    mode = require("ace-builds/src/mode-html").Mode;
+                }else{
+                    mode = require("ace-builds/src/mode-plain_text").Mode;
+                }
+
+                response_editor.session.setMode(new mode());
+
+                Object.keys(response.headers).forEach(function(key) {
+                    $("#response-headers").append('<li><strong>'+key+'</strong>: '+response.headers[key]+'</li>');
+                });
+                
             }).catch(err => {
                 console.log(err);
             });
