@@ -197,6 +197,10 @@ input, button, select, a{
     z-index: 10;
 }
 
+#response-headers{
+    margin: 0;
+}
+
 @media (min-width: 576px) and (max-width: 991px) { 
     #response { 
         margin-top: 10px;

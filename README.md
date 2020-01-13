@@ -4,8 +4,8 @@
   <a href="https://opensource.org/licenses/MIT" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
-  <a href="https://twitter.com/\_tunaorcun" target="_blank">
-    <img alt="Twitter: \_tunaorcun" src="https://img.shields.io/twitter/follow/\_tunaorcun.svg?style=social" />
+  <a href="https://twitter.com/tunaorcun_" target="_blank">
+    <img alt="Twitter: tunaorcun_" src="https://img.shields.io/twitter/follow/\tunaorcun_.svg?style=social" />
   </a>
 </p>
 
