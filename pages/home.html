@@ -18,11 +18,22 @@
     <div class="top"></div>
 
     <div id="drawer">
-      <select class="custom-select" name="theme" id="theme">
-        <option value="light">Light Theme</option>
-        <option value="dark">Dark Theme</option>
-        <option value="colorful">Colorful Theme</option>
-      </select>
+      <div class="theme-selection">
+        <span>Application Theme:</span>
+        <select class="custom-select" name="theme" id="theme">
+          <option value="light">Light Theme</option>
+          <option value="dark">Dark Theme</option>
+          <option value="colorful">Colorful Theme</option>
+        </select>
+      </div>
+
+      <div class="editor-selection mt-3">
+        <span>Default Request Body Format:</span>
+        <select class="custom-select" name="ace-option" id="ace-option">
+          <option value="json">JSON</option>
+          <option value="xml">XML</option>
+        </select>
+      </div>
     </div>
 
     <nav class="navbar">
