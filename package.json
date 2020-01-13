@@ -6,8 +6,8 @@
   "scripts": {
     "start": "electron ."
   },
-  "author": "orçun tuna",
-  "license": "ISC",
+  "author": "Reverse Team",
+  "license": "MIT",
   "devDependencies": {
     "electron": "^7.1.7",
     "electron-builder": "^21.2.0",
