@@ -15,12 +15,17 @@ $(".close-drawer a").on("click", function(e){
 $(function() {
 
     user_theme = window.localStorage.getItem("theme");
+    var theme_select = document.getElementById("theme");
     if (user_theme == "dark") {
         $("#theme-link").attr("href", "../styles/dark-theme.css");
         body_editor.setTheme(require('ace-builds/src/theme-tomorrow_night_eighties'));
+        $("#theme option").each(function(index) {
+            if ($(this).val() == user_theme) {
+                $(this).attr("selected", "selected");
+            }
+        });
     }
 
-    var theme_select = document.getElementById("theme");
 
     $(theme_select).on("change", function() {
         current_theme = window.localStorage.getItem("theme");
