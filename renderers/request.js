@@ -229,7 +229,7 @@ $(function(){
 
     $("#tab-headers .header-list").on("click", ".delete_header", function(e){
         if($("#tab-headers .header-list .item").length > 1){
-            if($(this).parent().parent().find(".header_key").val()){
+            if($(this).parent().parent().find(".params_key").val()){
                 Swal.fire({
                     title: 'Are you sure?',
                     text: "You won't be able to revert this!",
