@@ -4,28 +4,31 @@
   <a href="https://opensource.org/licenses/MIT" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
-  <a href="https://twitter.com/tunaorcun_" target="_blank">
-    <img alt="Twitter: tunaorcun_" src="https://img.shields.io/twitter/follow/\tunaorcun_.svg?style=social" />
-  </a>
 </p>
 
 > Better then postman :)
 
-## Install
+## Install and Usage
 
 ```sh
+git clone https://github.com/orcuntuna/guvercin.git
+cd guvercin
 npm install
-```
-
-## Usage
-
-```sh
 npm start
 ```
 
+## Screenshots
+
+![Guvercin App Request and Response](images/screenshot/screenshot-1.png)
+
+![Guvercin App Response Details](images/screenshot/screenshot-2.png)
+
+![Guvercin App Dark Theme](images/screenshot/screenshot-3.png)
+
+
 ## Author
 
-👤 **Orcun Tuna**
+👤 **Orçun Tuna**
 
 * Website: https://www.arkkod.com/
 * Twitter: [@\_tunaorcun](https://twitter.com/tunaorcun\_)

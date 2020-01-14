@@ -164,20 +164,198 @@
     },
     {
       "request_method": "POST",
-      "request_url": "http://www.google.com",
-      "request_body": "",
+      "request_url": "https://reqres.in/api/register",
+      "request_body": "{\n    \"name\": \"morpheus\",\n    \"job\": \"leader\"\n}",
+      "request_parameters": [],
+      "request_headers": []
+    },
+    {
+      "request_method": "POST",
+      "request_url": "https://reqres.in/api/register",
+      "request_body": "{\n    \"name\": \"morpheus\",\n    \"job\": \"leader\"\n}",
       "request_parameters": [],
       "request_headers": [
-        "{\"key\":\"Content-Type\",\"value\":\"text/plain\"}"
+        "{\"key\":\"Content-Type\",\"value\":\"application/json\"}"
+      ]
+    },
+    {
+      "request_method": "POST",
+      "request_url": "https://fakerestapi.azurewebsites.net/api/Authors",
+      "request_body": "{\n    \"name\": \"morpheus\",\n    \"job\": \"leader\"\n}",
+      "request_parameters": [],
+      "request_headers": [
+        "{\"key\":\"Content-Type\",\"value\":\"application/json\"}"
+      ]
+    },
+    {
+      "request_method": "POST",
+      "request_url": "http://dummy.restapiexample.com/api/v1/create",
+      "request_body": "{\n    \"name\": \"morpheus\",\n    \"job\": \"leader\"\n}",
+      "request_parameters": [],
+      "request_headers": [
+        "{\"key\":\"Content-Type\",\"value\":\"application/json\"}"
+      ]
+    },
+    {
+      "request_method": "POST",
+      "request_url": "https://jsonplaceholder.typicode.com/posts",
+      "request_body": "{\n    \"title\": \"hello guys\",\n    \"body\": \"this is body\",\n    \"user_id\": 14\n}",
+      "request_parameters": [],
+      "request_headers": [
+        "{\"key\":\"Content-Type\",\"value\":\"application/json\"}"
+      ]
+    },
+    {
+      "request_method": "PUT",
+      "request_url": "https://jsonplaceholder.typicode.com/posts/1",
+      "request_body": "{\n    \"id\": 5\n    \"title\": \"hello guys\",\n    \"body\": \"this is body\",\n    \"user_id\": 14\n}",
+      "request_parameters": [],
+      "request_headers": [
+        "{\"key\":\"Content-Type\",\"value\":\"application/json\"}"
+      ]
+    },
+    {
+      "request_method": "PUT",
+      "request_url": "https://jsonplaceholder.typicode.com/posts/1",
+      "request_body": "{\n    \"id\": 5,\n    \"title\": \"hello guys\",\n    \"body\": \"this is body\",\n    \"user_id\": 14\n}",
+      "request_parameters": [],
+      "request_headers": [
+        "{\"key\":\"Content-Type\",\"value\":\"application/json\"}"
       ]
     },
     {
       "request_method": "GET",
-      "request_url": "http://www.google.com",
-      "request_body": "asdlkfaskdf\nasdf\nsad\nsa\nfas\ndf\nsa\n",
+      "request_url": "https://jsonplaceholder.typicode.com/posts/1",
+      "request_body": "",
       "request_parameters": [],
       "request_headers": [
-        "{\"key\":\"Content-Type\",\"value\":\"text/plain\"}"
+        "{\"key\":\"Content-Type\",\"value\":\"application/json\"}"
+      ]
+    },
+    {
+      "request_method": "GET",
+      "request_url": "https://jsonplaceholder.typicode.com/posts/1",
+      "request_body": "{\n    \"title\": \"helloooo\"\n}",
+      "request_parameters": [],
+      "request_headers": [
+        "{\"key\":\"Content-Type\",\"value\":\"application/json\"}"
+      ]
+    },
+    {
+      "request_method": "GET",
+      "request_url": "https://jsonplaceholder.typicode.com/posts/",
+      "request_body": "{\n    \"title\": \"helloooo\"\n}",
+      "request_parameters": [],
+      "request_headers": [
+        "{\"key\":\"Content-Type\",\"value\":\"application/json\"}"
+      ]
+    },
+    {
+      "request_method": "PUT",
+      "request_url": "https://jsonplaceholder.typicode.com/posts/",
+      "request_body": "{\n    \"user_id\": 14,\n    \"title\": \"helloooo\",\n    \"body\": \"hahahahaha hahahah ahahha\",\n    \"id\": 4\n}",
+      "request_parameters": [],
+      "request_headers": [
+        "{\"key\":\"Content-Type\",\"value\":\"application/json\"}"
+      ]
+    },
+    {
+      "request_method": "PUT",
+      "request_url": "https://jsonplaceholder.typicode.com/posts/1",
+      "request_body": "{\n    \"user_id\": 14,\n    \"title\": \"helloooo\",\n    \"body\": \"hahahahaha hahahah ahahha\",\n    \"id\": 4\n}",
+      "request_parameters": [],
+      "request_headers": [
+        "{\"key\":\"Content-Type\",\"value\":\"application/json\"}"
+      ]
+    },
+    {
+      "request_method": "GET",
+      "request_url": "https://jsonplaceholder.typicode.com/posts/1",
+      "request_body": "{\n    \"user_id\": 14,\n    \"title\": \"helloooo\",\n    \"body\": \"hahahahaha hahahah ahahha\",\n    \"id\": 4\n}",
+      "request_parameters": [],
+      "request_headers": [
+        "{\"key\":\"Content-Type\",\"value\":\"application/json\"}"
+      ]
+    },
+    {
+      "request_method": "PUT",
+      "request_url": "https://jsonplaceholder.typicode.com/posts/1",
+      "request_body": "{\n    \"user_id\": 14,\n    \"title\": \"helloooo\",\n    \"body\": \"hahahahaha hahahah ahahha\",\n    \"id\": 4\n}",
+      "request_parameters": [],
+      "request_headers": [
+        "{\"key\":\"Content-Type\",\"value\":\"application/json\"}"
+      ]
+    },
+    {
+      "request_method": "PUT",
+      "request_url": "https://jsonplaceholder.typicode.com/posts/1",
+      "request_body": "",
+      "request_parameters": [],
+      "request_headers": [
+        "{\"key\":\"Content-Type\",\"value\":\"application/json\"}"
+      ]
+    },
+    {
+      "request_method": "PUT",
+      "request_url": "https://jsonplaceholder.typicode.com/posts/1",
+      "request_body": "{\"user_id\": 14,\"title\": \"helloooo\",\"body\": \"hahahahaha hahahah ahahha\",\"id\": 4}",
+      "request_parameters": [],
+      "request_headers": [
+        "{\"key\":\"Content-Type\",\"value\":\"application/json\"}"
+      ]
+    },
+    {
+      "request_method": "PUT",
+      "request_url": "https://jsonplaceholder.typicode.com/posts/1",
+      "request_body": "",
+      "request_parameters": [],
+      "request_headers": [
+        "{\"key\":\"Content-Type\",\"value\":\"application/json\"}"
+      ]
+    },
+    {
+      "request_method": "GET",
+      "request_url": "https://jsonplaceholder.typicode.com/posts/1",
+      "request_body": "",
+      "request_parameters": [],
+      "request_headers": [
+        "{\"key\":\"Content-Type\",\"value\":\"application/json\"}"
+      ]
+    },
+    {
+      "request_method": "GET",
+      "request_url": "https://jsonplaceholder.typicode.com/posts",
+      "request_body": "",
+      "request_parameters": [],
+      "request_headers": [
+        "{\"key\":\"Content-Type\",\"value\":\"application/json\"}"
+      ]
+    },
+    {
+      "request_method": "GET",
+      "request_url": "https://jsonplaceholder.typicode.com/posts/1",
+      "request_body": "",
+      "request_parameters": [],
+      "request_headers": [
+        "{\"key\":\"Content-Type\",\"value\":\"application/json\"}"
+      ]
+    },
+    {
+      "request_method": "PUT",
+      "request_url": "https://jsonplaceholder.typicode.com/posts/1",
+      "request_body": "{\"user_id\": 14,\"title\": \"helloooo\",\"body\": \"hahahahaha hahahah ahahha\",\"id\": 4}",
+      "request_parameters": [],
+      "request_headers": [
+        "{\"key\":\"Content-Type\",\"value\":\"application/json\"}"
+      ]
+    },
+    {
+      "request_method": "PUT",
+      "request_url": "https://jsonplaceholder.typicode.com/posts/1",
+      "request_body": "{\n    \"id\": 4,\n    \"user_id\":14,\n    \"title\": \"helloooo\",\n    \"body\": \"hahahahaha hahahah ahahha\"\n}",
+      "request_parameters": [],
+      "request_headers": [
+        "{\"key\":\"Content-Type\",\"value\":\"application/json\"}"
       ]
     }
   ]
