@@ -29,6 +29,9 @@ var response_codes = [
     { code: 501, name: "Not Implemented", color: "#fa8231" },
 ]
 
+var response_timer;
+var response_time;
+
 $(function(){
 
     var params = {
@@ -73,12 +76,19 @@ $(function(){
 
             var response = {}
 
+            response_time = 0;
+            response_timer = setInterval(() => {
+                response_time += 10;
+            }, 10);
+
             fetch(params.url + params.params, params).then(res => {
                 response.headers = res.headers.raw();
                 response.status = res.status;
                 response.statusText = res.statusText;
                 return res.text();
             }).then(data => {
+
+                clearInterval(response_timer);
 
                 response.data = data;
                 console.log(response);
@@ -120,23 +130,35 @@ $(function(){
                 response_editor.session.setMode(new mode());
 
                 $("#response-headers").html("");
+                $("#response-info").html("");
+                $("#response-info").append('<li><strong>Response Time: </strong> '+response_time / 1000+' seconds</li>');
                 Object.keys(response.headers).forEach(function(key) {
                     $("#response-headers").append('<li><strong>'+key+'</strong>: '+response.headers[key]+'</li>');
                 });
 
                 response_codes.forEach(element => {
                     if(element.code == response.status){
-                        $("#response-headers").prepend('<li><strong>Response Code: </strong>: <span style="color: '+element.color+'">'+element.code+' ('+element.name+')</span></li>');
+                        $("#response-info").prepend('<li><strong>Response Code: </strong> <span style="color: '+element.color+'">'+element.code+' ('+element.name+')</span></li>');
                         $(".response-code span").css("background-color", element.color);
                         $(".response-code span").text(element.code + " (" + element.name + ")");
                         $(".response-code span").show();
                     }
                 });
+
+                if(response.data.length > 0){
+                    var response_size = (new TextEncoder().encode(response.data)).length;
+                    $("#response-info").append('<li><strong>Response Data Size: </strong> '+response_size / 1000+' kb</li>');
+                }
+
+                $(".response-hr").show();
                 
             }).catch(err => {
+                clearInterval(response_timer);
                 console.log(err);
                 response_editor.setValue("");
                 $("#response-headers").html("");
+                $("#response-info").html("");
+                $(".response-hr").hide();
                 $(".response-code span").css("background-color", "#eb3b5a");
                 $(".response-code span").text(err.code);
                 $(".response-code span").show();

@@ -225,3 +225,7 @@ input, button, select, a{
 .response-code .badge{
     font-weight: bold;
 }
+
+.response-hr{
+    display: none;
+}
