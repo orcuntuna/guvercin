@@ -1,15 +1,17 @@
-const parameter_template = `
-<div class="item">
-    <div class="key">
-        <input type="text" class="form-control params_key" name="params_key[]" placeholder="Parameter Key"/>
-    </div>
-    <div class="value">
-        <input type="text" class="form-control params_value" name="params_value[]" placeholder="Parameter Value"/>
-    </div>
-    <div class="operation">
-        <button tabindex="-1" class="btn btn-delete delete_param"><i class="fa fa-trash"></i></button>
-    </div>
-</div>`;
+function create_parameter_template(key="", value=""){
+    return `
+    <div class="item">
+        <div class="key">
+            <input type="text" class="form-control params_key" name="params_key[]" placeholder="Parameter Key" value="`+key+`" />
+        </div>
+        <div class="value">
+            <input type="text" class="form-control params_value" name="params_value[]" placeholder="Parameter Value" value="`+value+`"/>
+        </div>
+        <div class="operation">
+            <button tabindex="-1" class="btn btn-delete delete_param"><i class="fa fa-trash"></i></button>
+        </div>
+    </div>`
+}
 
 const header_template = `
 <div class="item">
@@ -30,7 +32,7 @@ var headerValueSuggests = ["application/EDI-X12","application/EDIFACT","applicat
 function checkParamsAndAdd(){
     var params = $("#tab-params .param-list input.params_key");
     if($(params[params.length-1]).val()){
-        $("#tab-params .param-list").append(parameter_template);
+        $("#tab-params .param-list").append(create_parameter_template());
     }
 }
 
@@ -57,9 +59,9 @@ $(function(){
     var active_tab_name_response = $("#response .nav-tabs .active").attr("tab");
     $("#response .tabs .tab[tab='"+active_tab_name_response+"']").show();
 
-    $("#tab-params .param-list").append(parameter_template);
-    $("#tab-params .param-list").append(parameter_template);
-    $("#tab-params .param-list").append(parameter_template);
+    $("#tab-params .param-list").append(create_parameter_template());
+    $("#tab-params .param-list").append(create_parameter_template());
+    $("#tab-params .param-list").append(create_parameter_template());
     $("#tab-headers .header-list").append(header_template);
     $("#tab-headers .header-list").append(header_template);
     $("#tab-headers .header-list").append(header_template);
@@ -200,7 +202,7 @@ $(function(){
     });
 
     $("#tab-params .param-list").on("click", ".add_param", function(e){
-        $("#tab-params .param-list").append(parameter_template);
+        $("#tab-params .param-list").append(create_parameter_template());
     });
 
     $("#tab-params .param-list").on("click", ".delete_param", function(e){
