@@ -12,6 +12,11 @@ $(".close-drawer a").on("click", function (e) {
     $(".open-drawer").show();
 });
 
+$(".toggle-history a").on("click", function (e) {
+    e.preventDefault();
+    $("#history").toggle();
+});
+
 function setHeaderContentType(header_mode) {
     if (header_mode) {
         var changed = false;

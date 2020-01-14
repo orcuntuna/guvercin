@@ -27,11 +27,20 @@ $(function(){
             params.method = $("#method-select").val();
             params.body = body_editor.getValue();
 
+            history_data = {
+                request_method: params.method,
+                request_url: params.url,
+                request_body: params.body,
+                request_parameters: [],
+                request_headers: []
+            };
+
             $("#tab-headers .header-list .item").each(function(index){
                 if($(this).find(".params_key").val()){
                     var key = $(this).find(".params_key").val();
                     var value = $(this).find(".params_value").val();
                     params.headers[key] = value;
+                    history_data.request_headers[index] = JSON.stringify({key: key, value: value});
                 }
             });
 
@@ -44,6 +53,8 @@ $(function(){
                     }else{
                         params.params += "&" + key + "=" + value;
                     }
+                    history_data.request_parameters[index] = JSON.stringify({key: key, value: value});
+
                 }
             });
 
@@ -59,6 +70,18 @@ $(function(){
                 response.statusText = res.statusText;
                 return res.text();
             }).then(data => {
+
+                /* History Save */
+
+                last_history = db.get("history").value();
+                
+                if (JSON.stringify(last_history[last_history.length - 1]) != JSON.stringify(history_data)) {
+                    db.get('history')
+                      .push(history_data)
+                      .write()
+                }
+
+                /* History Save */
 
                 response.data = data;
                 console.log(response);

@@ -170,7 +170,8 @@ input, button, select, a{
     width: 100%;
 }
 
-#drawer{
+#drawer,
+#history {
     width: 25%;
     min-width: 300px;
     height: calc(100vh - 64px);
@@ -183,6 +184,10 @@ input, button, select, a{
     display: none;
     overflow-y: auto;
     padding: 20px;
+}
+
+#history {
+    display: none;
 }
 
 .close-drawer{
@@ -200,6 +205,21 @@ input, button, select, a{
 #response-headers{
     margin: 0;
 }
+
+.list-group a {
+    text-decoration: none;
+}
+
+.list-group a .list-group-item span.method {
+    color: green;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.list-group a .list-group-item span.url {
+    color: #333;
+}
+
 
 @media (min-width: 576px) and (max-width: 991px) { 
     #response { 
