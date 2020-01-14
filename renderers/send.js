@@ -9,6 +9,28 @@ function validateURL(){
     }
 }
 
+var response_codes = [
+    { code: 200, name: "OK", color: "#20bf6b" },
+    { code: 201, name: "Created", color: "#20bf6b" },
+    { code: 202, name: "Accepted", color: "#20bf6b" },
+    { code: 204, name: "No Content", color: "#20bf6b" },
+    { code: 301, name: "Moved Parmanently", color: "#4b6584" },
+    { code: 302, name: "Found", color: "#4b6584" },
+    { code: 303, name: "See Other", color: "#4b6584" },
+    { code: 304, name: "Not Modified", color: "#4b6584" },
+    { code: 307, name: "Temporary Redirect", color: "#4b6584" },
+    { code: 400, name: "Bad Request", color: "#eb3b5a" },
+    { code: 401, name: "Unauthorized", color: "#eb3b5a" },
+    { code: 403, name: "Forbidden", color: "#eb3b5a" },
+    { code: 404, name: "Not Found", color: "#eb3b5a" },
+    { code: 405, name: "Method Not Allowed", color: "#eb3b5a" },
+    { code: 406, name: "Not Acceptable", color: "#eb3b5a" },
+    { code: 412, name: "Precondition Failed", color: "#eb3b5a" },
+    { code: 415, name: "Unsupported Media Type", color: "#eb3b5a" },
+    { code: 500, name: "Internal Server Error", color: "#fa8231" },
+    { code: 501, name: "Not Implemented", color: "#fa8231" },
+]
+
 $(function(){
 
     var params = {
@@ -99,12 +121,27 @@ $(function(){
 
                 response_editor.session.setMode(new mode());
 
+                $("#response-headers").html("");
                 Object.keys(response.headers).forEach(function(key) {
                     $("#response-headers").append('<li><strong>'+key+'</strong>: '+response.headers[key]+'</li>');
+                });
+
+                response_codes.forEach(element => {
+                    if(element.code == response.status){
+                        $("#response-headers").prepend('<li><strong>Response Code: </strong>: <span style="color: '+element.color+'">'+element.code+' ('+element.name+')</span></li>');
+                        $(".response-code span").css("background-color", element.color);
+                        $(".response-code span").text(element.code + " (" + element.name + ")");
+                        $(".response-code span").show();
+                    }
                 });
                 
             }).catch(err => {
                 console.log(err);
+                response_editor.setValue("");
+                $("#response-headers").html("");
+                $(".response-code span").css("background-color", "#eb3b5a");
+                $(".response-code span").text(err.code);
+                $(".response-code span").show();
             });
 
         }else{
