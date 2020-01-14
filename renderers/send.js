@@ -1,5 +1,3 @@
-const fetch = require("node-fetch");
-
 function validateURL(){
     var url = $("#url").val();
     if(validate({website: url}, {website: {url: true}}) != undefined){
