@@ -1,5 +1,8 @@
 $(".open-drawer a").on("click", function (e) {
     e.preventDefault();
+    if ($("#history").is(":visible")) {
+        $("#history").hide();
+    }
     $("#drawer").show();
     $(".open-drawer").hide();
     $(".close-drawer").show();
@@ -14,6 +17,11 @@ $(".close-drawer a").on("click", function (e) {
 
 $(".toggle-history a").on("click", function (e) {
     e.preventDefault();
+    if ($("#drawer").is(":visible")) {
+        $("#drawer").hide();
+        $(".close-drawer").hide();
+        $(".open-drawer").show();
+    }
     $("#history").toggle();
 });
 
