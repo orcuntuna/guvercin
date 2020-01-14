@@ -1,6 +1,6 @@
 const { app, BrowserWindow } = require('electron');
 
-let win
+let win;
 
 function createWindow () {
   win = new BrowserWindow({
@@ -10,12 +10,12 @@ function createWindow () {
       nodeIntegration: true
     },
     icon: __dirname + "./images/logo.png"
-  })
+  });
   win.loadFile('pages/home.html')
-
+  win.maximize();
   win.on('closed', () => {
     win = null
-  })
+  });
 }
 
 app.on('ready', createWindow)
@@ -24,10 +24,10 @@ app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit()
   }
-})
+});
 
 app.on('activate', () => {
   if (win === null) {
     createWindow()
   }
-})
+});
