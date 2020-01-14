@@ -17,15 +17,26 @@ $(function () {
         $("#history .list-group").prepend(history_template);
     });
 
+    
+
     $("#history .list-group a").on("click", function(e) {
         history_index = $(this).attr("historyIndex");
 
         history_request = user_history[history_index];
+        history_request_headers = history_request.request_headers;
+        history_request_parameters = history_request.request_parameters;
         console.log(history_request);
         $("#url").val(history_request.request_url);
         $('#method-select option:selected').removeAttr('selected');
         $("#method-select option[value='" + history_request.request_method +"']").attr("selected", "selected");
-        body_editor.setValue(history_request.request_body)
+        body_editor.setValue(history_request.request_body);
+        history_request_headers.forEach(element => {
+            
+        });
+
+        history_request_parameters.forEach(element => {
+            
+        });
         
     });
 });

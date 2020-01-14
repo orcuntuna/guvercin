@@ -211,6 +211,10 @@ input, button, select, a{
     text-decoration: none;
 }
 
+.list-group-item {
+    word-break: break-all;
+}
+
 .list-group a .list-group-item span.method {
     color: green;
     text-transform: uppercase;
