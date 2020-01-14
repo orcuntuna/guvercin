@@ -49,6 +49,7 @@ input, button, select, a{
     margin-left: -15px;
     margin-right: -15px;
     padding-left: 15px;
+    padding-right: 15px;
 }
 
 .custom-tabs .nav-item{
@@ -225,4 +226,26 @@ input, button, select, a{
     #response { 
         margin-top: 10px;
     }
+}
+
+.response-code{
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.response-code .badge{
+    display: none;
+    padding: 8px 10px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.response-code .badge{
+    font-weight: bold;
+}
+
+.response-hr{
+    display: none;
 }

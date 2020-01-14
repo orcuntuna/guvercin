@@ -1,5 +1,3 @@
-var response_editor;
-
 $(function(){
 
     response_editor = ace.edit("response-editor", {

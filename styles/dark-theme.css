@@ -1,15 +1,15 @@
 body {
-    background-color: #34495e;
+    background-color: #333;
     color: #fff;
 }
 
 #drawer {
-    background-color: #34495e;
+    background-color: #222;
     color: #fff;
 }
 
 #drawer select {
-    background-color: #2c3e50;
+    background-color: #333;
     color: #fff;
     border-color: transparent;
 }
@@ -23,7 +23,7 @@ body {
 }
 
 section {
-    background-color: #34495e;
+    background-color: #333;
 }
 
 input.form-control {
@@ -38,22 +38,22 @@ span.logo {
 section.request-bar,
 .container-fluid .nav,
 .nav .nav-tabs {
-    background-color: #2c3e50;
+    background-color: #222;
 }
 
 .props,
 .response {
-    background-color: #34495e;
+    background-color: #333;
 }
 
 .custom-tabs .nav-link.active {
-    background-color: #34495e;
-    border-color: #e36209 #2c3e50 transparent;
+    background-color: #161616;
+    border-color: #e36209 #333 transparent;
     border-bottom-color: transparent;
 }
 
 .nav-tabs {
-    border-bottom: 1px solid #2c3e50;
+    border-bottom: 1px solid #000;
 }
 .nav-tabs .nav-link.active:hover {
     border-top-color: #e36209;
@@ -64,7 +64,7 @@ section.request-bar,
 }
 
 #method-select {
-    background-color: #34495e;
+    background-color: #666;
     color: #fff;
     border-color: transparent;
 }
