@@ -1,4 +1,18 @@
-
+function method_colors(method){
+    var colors = {
+        "get": "#10ac84",
+        "post": "#2e86de",
+        "put": "#f0932b",
+        "delete": "#ee5253",
+        "patch": "#be2edd",
+        "custom": "#535c68"
+    }
+    method = method.toLowerCase();
+    if(colors[method]){
+        return colors[method];
+    }
+    return colors["custom"];
+}
 
 $(function () {
 
@@ -9,15 +23,13 @@ $(function () {
         history_template = `
         <a href="javascript:void(0)" class="mb-2" historyIndex="` + index + `">
             <li class="list-group-item">
-                <span class="method">` + element.request_method + `</span>
+                <span class="method" style="color: `+method_colors(element.request_method)+`">` + element.request_method + `</span>
                 <span class="url ml-3">` + element.request_url + `</span>
             </li>
         </a>`;
 
         $("#history .list-group").prepend(history_template);
     });
-
-    
 
     $("#history .list-group a").on("click", function(e) {
         history_index = $(this).attr("historyIndex");

@@ -370,6 +370,35 @@
       "request_headers": [
         "{\"key\":\"Content-Type\",\"value\":\"text/plain\"}"
       ]
+    },
+    {
+      "request_method": "PUT",
+      "request_url": "https://jsonplaceholder.typicode.com/posts/1",
+      "request_body": "{\n    \"id\": 4,\n    \"user_id\":14,\n    \"title\": \"helloooo\",\n    \"body\": \"hahahahaha hahahah ahahha\"\n}",
+      "request_parameters": [
+        "{\"key\":\"lkasdlasd\",\"value\":\"lkasdlkas\"}"
+      ],
+      "request_headers": [
+        "{\"key\":\"Content-Type\",\"value\":\"application/json\"}"
+      ]
+    },
+    {
+      "request_method": "TEST",
+      "request_url": "http://google.com",
+      "request_body": "",
+      "request_parameters": [],
+      "request_headers": [
+        "{\"key\":\"Content-Type\",\"value\":\"application/json\"}"
+      ]
+    },
+    {
+      "request_method": "GET",
+      "request_url": "https://jsonplaceholder.typicode.com/posts/1",
+      "request_body": "",
+      "request_parameters": [],
+      "request_headers": [
+        "{\"key\":\"Content-Type\",\"value\":\"application/json\"}"
+      ]
     }
   ]
 }
