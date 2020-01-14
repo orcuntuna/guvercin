@@ -357,6 +357,19 @@
       "request_headers": [
         "{\"key\":\"Content-Type\",\"value\":\"application/json\"}"
       ]
+    },
+    {
+      "request_method": "GET",
+      "request_url": "http://www.google.com",
+      "request_body": "jakdsfkas\nsdkjasd\nkjasdkjsd\n",
+      "request_parameters": [
+        "{\"key\":\"asdflaksdf\",\"value\":\"laslkdas\"}",
+        "{\"key\":\"alkasdlkas\",\"value\":\"klasdlaksd\"}",
+        "{\"key\":\"lkasdlasd\",\"value\":\"lkasdlkas\"}"
+      ],
+      "request_headers": [
+        "{\"key\":\"Content-Type\",\"value\":\"text/plain\"}"
+      ]
     }
   ]
 }

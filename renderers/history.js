@@ -31,12 +31,21 @@ $(function () {
         $("#method-select option[value='" + history_request.request_method +"']").attr("selected", "selected");
         body_editor.setValue(history_request.request_body);
         history_request_headers.forEach(element => {
-            
+            element = JSON.parse(element);
+            $("#tab-headers .header-list").html("");
+            $("#tab-headers .header-list").append(create_header_template(element.key, element.value)); 
         });
+        $("#tab-headers .header-list").append(create_header_template()); 
+
 
         history_request_parameters.forEach(element => {
-            
+            element = JSON.parse(element);
+            $("#tab-params .param-list").html("");
+            $("#tab-params .param-list").append(create_parameter_template(element.key, element.value));
         });
+        $("#tab-params .param-list").append(create_parameter_template());
+        body_editor.clearSelection();
+
         
     });
 });
