@@ -115,9 +115,7 @@ $(function(){
 
                 if(response.headers["content-type"][0].includes("json")){
                     try{
-                        var json_object = JSON.parse(response.data);
-                        var pretty_json = json_beautify(json_object, null, 2, 100);
-                        response.data = pretty_json;
+                        response.data = JSON.stringify(JSON.parse(response.data), null, 4);
                     }catch(err){
                         console.log(err);
                     }

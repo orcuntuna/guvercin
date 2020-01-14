@@ -67,6 +67,7 @@ $(function () {
     if (user_theme == "dark") {
         $("#theme-link").attr("href", "../styles/dark-theme.css");
         body_editor.setTheme(require('ace-builds/src/theme-tomorrow_night_eighties'));
+        response_editor.setTheme(require('ace-builds/src/theme-tomorrow_night_eighties'));
         $('#theme option:selected').removeAttr('selected');
         $("#theme option[value='dark']").attr("selected", "selected");
     }
@@ -82,11 +83,13 @@ $(function () {
                 $("#theme-link").attr("href", "../styles/dark-theme.css");
                 window.localStorage.setItem("theme", "dark");
                 body_editor.setTheme(require('ace-builds/src/theme-tomorrow_night_eighties'));
+                response_editor.setTheme(require('ace-builds/src/theme-tomorrow_night_eighties'));
             }
             else if (theme_option == "light") {
                 $("#theme-link").attr("href", "../styles/empty.css");
                 window.localStorage.setItem("theme", "light");
                 body_editor.setTheme(require('ace-builds/src/theme-xcode'));
+                response_editor.setTheme(require('ace-builds/src/theme-xcode'));
             }
         }
     });
