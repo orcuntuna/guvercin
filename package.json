@@ -4,8 +4,10 @@
   "description": "rest api client app",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "build --linux snap"
   },
+  "repository": "https://github.com/orcuntuna/guvercin",
   "author": "Arkkod <arkkodcom@gmail.com>",
   "license": "MIT",
   "devDependencies": {
@@ -25,6 +27,9 @@
     "validate.js": "^0.13.1",
     "xml-formatter": "^1.2.0"
   },
+  "keywords": [
+    "guvercin", "rest", "api", "client", "json", "xml", "post", "get", "request", "response"
+  ],
   "build": {
     "appId": "com.arkkod.guvercin",
     "linux": {
