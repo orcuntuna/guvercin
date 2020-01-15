@@ -10,6 +10,10 @@
 
 ## Install and Usage
 
+<a href="https://snapcraft.io/guvercin">
+  <img alt="Get it from the Snap Store" src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" />
+</a>
+
 ```sh
 git clone https://github.com/orcuntuna/guvercin.git
 cd guvercin
