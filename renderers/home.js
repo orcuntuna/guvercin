@@ -8,7 +8,7 @@ const { ipcRenderer, ipcMain } = require('electron');
 const adapter = new FileSync('db.json');
 const db = low(adapter);
 
-db.defaults({ history: [{ request_parameters: [{}], request_headers: [{}] }], collection: [{ request_parameters: [{}], request_headers: [{}] }] }).write();
+db.defaults({ history: [], collection: [] }).write();
 const fetch = require("node-fetch");
 
 var body_editor;

@@ -28,10 +28,12 @@ $(function () {
 
     user_history = db.get("history").value();
     
-    user_history.forEach((element, index) => {
-        history_template = create_history_template(index, element.request_method, element.request_url);
-        $("#history .list-group").prepend(history_template);
-    });
+    if (user_history.length > 0) {
+        user_history.forEach((element, index) => {
+            history_template = create_history_template(index, element.request_method, element.request_url);
+            $("#history .list-group").prepend(history_template);
+        });
+    }
 
     $("#history").on("click", ".list-group a", function(e) {
         history_index = $(this).attr("historyIndex");

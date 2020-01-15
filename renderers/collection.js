@@ -18,10 +18,12 @@ ipcRenderer.on("save-request", function(event) {
 $(function () {
     user_collection = db.get("collection").value();
 
-    user_collection.forEach((element, index) => {
-        collection_template = create_collection_template(index, element.request_method, element.request_url);
-        $("#collection .list-group").prepend(collection_template);
-    });
+    if (user_collection.length > 0) {
+        user_collection.forEach((element, index) => {
+            collection_template = create_collection_template(index, element.request_method, element.request_url);
+            $("#collection .list-group").prepend(collection_template);
+        });  
+    } 
 
     $("#collection").on("click", ".list-group-item button", function() {
         Swal.fire({
