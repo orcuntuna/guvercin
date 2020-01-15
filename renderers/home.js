@@ -3,6 +3,7 @@ const ace = require('ace-builds/src/ace');
 var xml_beautify = require('xml-formatter');
 const low = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');
+const { ipcRenderer, ipcMain } = require('electron');
 
 const adapter = new FileSync('db.json');
 const db = low(adapter);

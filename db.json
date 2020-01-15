@@ -379,7 +379,32 @@
       "request_headers": [
         "{\"key\":\"Content-Type\",\"value\":\"text/plain\"}"
       ]
+    },
+    {
+      "request_method": "GET",
+      "request_url": "https://www.google.com",
+      "request_body": "",
+      "request_parameters": [
+        "{\"key\":\"askdlal\",\"value\":\"klasdla\"}",
+        "{\"key\":\"lkasdkas\",\"value\":\"lkasdlkaskd\"}"
+      ],
+      "request_headers": [
+        "{\"key\":\"Content-Type\",\"value\":\"text/plain\"}"
+      ]
     }
   ],
-  "collection": []
+  "collection": [
+    {
+      "request_method": "GET",
+      "request_url": "http://www.google.com",
+      "request_body": "asdasdsda\ndsa\nda\n\ndsa\n",
+      "request_parameters": [
+        "{\"key\":\"adsklksa\",\"value\":\"kladslka\"}",
+        "{\"key\":\"kladsklslk\",\"value\":\"klasdklask\"}"
+      ],
+      "request_headers": [
+        "{\"key\":\"Content-Type\",\"value\":\"text/plain\"}"
+      ]
+    }
+  ]
 }

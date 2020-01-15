@@ -11,6 +11,10 @@ function create_collection_template(index, method, url) {
     </a>`;
 }
 
+ipcRenderer.on("save-request", function(event) {
+    $("#save").click();
+})
+
 $(function () {
     user_collection = db.get("collection").value();
 

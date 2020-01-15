@@ -1,3 +1,44 @@
+ipcRenderer.on("toggle-history", function (event) {
+    toggleHistory();
+});
+
+ipcRenderer.on("toggle-collection", function(event) {
+    toggleCollection();
+});
+
+ipcRenderer.on("toggle-settings", function(event) {
+    if ($("#drawer").is(":visible")) {
+        $(".close-drawer a").click();
+    } else {
+        $(".open-drawer a").click();
+    }
+});
+
+function toggleHistory() {
+    if ($("#drawer").is(":visible")) {
+        $("#drawer").hide();
+        $(".close-drawer").hide();
+        $(".open-drawer").show();
+    }
+    if ($("#collection").is(":visible")) {
+        $("#collection").hide();
+    }
+    $("#history").toggle();
+}
+
+function toggleCollection() {
+    if ($("#drawer").is(":visible")) {
+        $("#drawer").hide();
+        $(".close-drawer").hide();
+        $(".open-drawer").show();
+    }
+    if ($("#history").is(":visible")) {
+        $("#history").hide();
+    }
+    $("#collection").toggle();
+}
+
+
 $(".open-drawer a").on("click", function (e) {
     e.preventDefault();
     if ($("#history").is(":visible")) {
@@ -20,28 +61,12 @@ $(".close-drawer a").on("click", function (e) {
 
 $(".toggle-history a").on("click", function (e) {
     e.preventDefault();
-    if ($("#drawer").is(":visible")) {
-        $("#drawer").hide();
-        $(".close-drawer").hide();
-        $(".open-drawer").show();
-    }
-    if ($("#collection").is(":visible")) {
-        $("#collection").hide();
-    }
-    $("#history").toggle();
+    toggleHistory();
 });
 
 $(".toggle-collection a").on("click", function (e) {
     e.preventDefault();
-    if ($("#drawer").is(":visible")) {
-        $("#drawer").hide();
-        $(".close-drawer").hide();
-        $(".open-drawer").show();
-    }
-    if ($("#history").is(":visible")) {
-        $("#history").hide();
-    }
-    $("#collection").toggle();
+    toggleCollection();
 });
 
 function setHeaderContentType(header_mode) {

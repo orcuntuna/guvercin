@@ -32,6 +32,10 @@ var response_codes = [
 var response_timer;
 var response_time;
 
+ipcRenderer.on("send-request", function(event) {
+    $("#request-form").submit();
+});
+
 $(function(){
 
     var params = {
