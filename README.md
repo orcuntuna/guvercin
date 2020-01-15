@@ -6,7 +6,7 @@
   </a>
 </p>
 
-> Better then postman :)
+> Guvercin is Open Source Rest API Client App. Simple, fast and minimal desktop and web application for developers. Better than postman :)
 
 ## Install and Usage
 
