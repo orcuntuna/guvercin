@@ -9,7 +9,7 @@ function createWindow () {
     webPreferences: {
       nodeIntegration: true
     },
-    icon: __dirname + "./images/logo.png"
+    icon: __dirname + "/build/64x64.png"
   });
   win.loadFile('pages/home.html')
   win.maximize();
