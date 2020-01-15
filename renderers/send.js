@@ -104,6 +104,8 @@ $(function(){
                 last_history = db.get("history").value();
                 
                 if (JSON.stringify(last_history[last_history.length - 1]) != JSON.stringify(history_data)) {
+                    history_template = create_history_template(last_history.length, history_data.request_method, history_data.request_url);
+                    $("#history .list-group").prepend(history_template);
                     db.get('history')
                       .push(history_data)
                       .write()

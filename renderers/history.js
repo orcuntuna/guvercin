@@ -1,31 +1,29 @@
-
+function create_history_template(index, method, url) {
+    return `
+    <a href="javascript:void(0)" class="mb-2" historyIndex="` + index + `">
+        <li class="list-group-item">
+            <span class="method">` + method + `</span>
+            <span class="url ml-3">` + url + `</span>
+        </li>
+    </a>`;
+}
 
 $(function () {
 
     user_history = db.get("history").value();
     
     user_history.forEach((element, index) => {
-
-        history_template = `
-        <a href="javascript:void(0)" class="mb-2" historyIndex="` + index + `">
-            <li class="list-group-item">
-                <span class="method">` + element.request_method + `</span>
-                <span class="url ml-3">` + element.request_url + `</span>
-            </li>
-        </a>`;
-
+        history_template = create_history_template(index, element.request_method, element.request_url);
         $("#history .list-group").prepend(history_template);
     });
 
-    
-
-    $("#history .list-group a").on("click", function(e) {
+    $("#history").on("click", ".list-group a", function(e) {
         history_index = $(this).attr("historyIndex");
 
         history_request = user_history[history_index];
         history_request_headers = history_request.request_headers;
         history_request_parameters = history_request.request_parameters;
-        console.log(history_request);
+        
         $("#url").val(history_request.request_url);
         $('#method-select option:selected').removeAttr('selected');
         $("#method-select option[value='" + history_request.request_method +"']").attr("selected", "selected");

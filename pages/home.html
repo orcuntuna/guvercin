@@ -19,7 +19,7 @@
 
     <div id="drawer">
       <div class="theme-selection">
-        <span>Application Theme:</span>
+        <label class="header-label" for="theme">Application Theme:</label>
         <select class="custom-select" name="theme" id="theme">
           <option value="light">Light Theme</option>
           <option value="dark">Dark Theme</option>
@@ -28,7 +28,7 @@
       </div>
 
       <div class="editor-selection mt-3">
-        <span>Default Request Body Format:</span>
+        <label class="header-label" for="ace-option">Default Request Body Format:</label>
         <select class="custom-select" name="ace-option" id="ace-option">
           <option value="json">JSON</option>
           <option value="xml">XML</option>
@@ -43,6 +43,11 @@
       </ul>
     </div>
 
+    <div id="collection">
+      <ul class="list-group">
+      </ul>
+    </div>
+
     <nav class="navbar">
       <a class="navbar-brand" href="#">
         <img src="../images/logo.png" width="30" height="30" class="d-inline-block align-top mr-2" alt="Guvercin">
@@ -52,7 +57,7 @@
         <li class="nav-item active">
           <a class="nav-link" href="#">Request</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item toggle-collection">
           <a class="nav-link" href="#">Collection</a>
         </li>
         <li class="nav-item toggle-history">

@@ -3,6 +3,9 @@ $(".open-drawer a").on("click", function (e) {
     if ($("#history").is(":visible")) {
         $("#history").hide();
     }
+    if ($("#collection").is(":visible")) {
+        $("#collection").hide();
+    }
     $("#drawer").show();
     $(".open-drawer").hide();
     $(".close-drawer").show();
@@ -22,7 +25,23 @@ $(".toggle-history a").on("click", function (e) {
         $(".close-drawer").hide();
         $(".open-drawer").show();
     }
+    if ($("#collection").is(":visible")) {
+        $("#collection").hide();
+    }
     $("#history").toggle();
+});
+
+$(".toggle-collection a").on("click", function (e) {
+    e.preventDefault();
+    if ($("#drawer").is(":visible")) {
+        $("#drawer").hide();
+        $(".close-drawer").hide();
+        $(".open-drawer").show();
+    }
+    if ($("#history").is(":visible")) {
+        $("#history").hide();
+    }
+    $("#collection").toggle();
 });
 
 function setHeaderContentType(header_mode) {

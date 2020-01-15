@@ -7,7 +7,7 @@ const FileSync = require('lowdb/adapters/FileSync');
 const adapter = new FileSync('db.json');
 const db = low(adapter);
 
-db.defaults({ history: [{ request_parameters: [{}], request_headers: [{}] }] }).write();
+db.defaults({ history: [{ request_parameters: [{}], request_headers: [{}] }], collection: [{ request_parameters: [{}], request_headers: [{}] }] }).write();
 const fetch = require("node-fetch");
 
 var body_editor;

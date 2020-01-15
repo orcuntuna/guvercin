@@ -172,7 +172,8 @@ input, button, select, a{
 }
 
 #drawer,
-#history {
+#history,
+#collection {
     width: 25%;
     min-width: 300px;
     height: calc(100vh - 64px);
@@ -187,7 +188,9 @@ input, button, select, a{
     padding: 20px;
 }
 
-#history {
+#history,
+#collection {
+    width: 35%;
     display: none;
 }
 
@@ -212,7 +215,7 @@ input, button, select, a{
 }
 
 .list-group-item {
-    word-break: break-all;
+    display: flex;
 }
 
 .list-group a .list-group-item span.method {
@@ -222,6 +225,7 @@ input, button, select, a{
 }
 
 .list-group a .list-group-item span.url {
+    word-break: break-all;
     color: #333;
 }
 
@@ -252,4 +256,20 @@ input, button, select, a{
 
 .response-hr{
     display: none;
+}
+
+.delete-button {
+    border: none;
+    background-color: transparent;
+    color: #a0a0a0;
+    margin-left: auto;
+}
+
+.delete-button:hover {
+    color: #d63031;
+}
+
+.header-label {
+    font-weight: bold;
+    margin-bottom: 8px;
 }
