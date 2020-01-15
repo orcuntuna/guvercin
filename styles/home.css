@@ -190,7 +190,8 @@ input, button, select, a{
 
 #history,
 #collection {
-    width: 35%;
+    width: 30%;
+    min-width: 400px;
     display: none;
 }
 

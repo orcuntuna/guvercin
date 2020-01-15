@@ -2,10 +2,26 @@ function create_history_template(index, method, url) {
     return `
     <a href="javascript:void(0)" class="mb-2" historyIndex="` + index + `">
         <li class="list-group-item">
-            <span class="method">` + method + `</span>
+            <span class="method" style="color: `+method_colors(method)+`">` + method + `</span>
             <span class="url ml-3">` + url + `</span>
         </li>
     </a>`;
+}
+
+function method_colors(method){
+    var colors = {
+        "get": "#10ac84",
+        "post": "#2e86de",
+        "put": "#f0932b",
+        "delete": "#ee5253",
+        "patch": "#be2edd",
+        "custom": "#535c68"
+    }
+    method = method.toLowerCase();
+    if(colors[method]){
+        return colors[method];
+    }
+    return colors["custom"];
 }
 
 $(function () {
