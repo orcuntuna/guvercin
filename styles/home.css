@@ -274,3 +274,15 @@ input, button, select, a{
     font-weight: bold;
     margin-bottom: 8px;
 }
+
+#tab-response-data {
+    position: relative;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-weight: bold;
+    font-size: 20px;
+}

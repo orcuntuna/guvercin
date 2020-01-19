@@ -48,6 +48,9 @@ $(function(){
 
     $("#request-form").on("submit", function(e){
         e.preventDefault();
+        $("#send").attr("disabled", "disabled");
+        $("#loading").show();
+        $("#response-editor").hide();
         if(validateURL()){
 
             params.url = $("#url").val();
@@ -104,6 +107,10 @@ $(function(){
             }).then(data => {
 
                 clearInterval(response_timer);
+                $("#send").removeAttr("disabled");
+                $("#loading").hide();
+                $("#response-editor").show();
+
                 /* History Save */
                 last_history = db.get("history").value();
                 
@@ -183,6 +190,9 @@ $(function(){
                 
             }).catch(err => {
                 clearInterval(response_timer);
+                $("#send").removeAttr("disabled");
+                $("#loading").hide();
+                $("#response-editor").show();
                 console.log(err);
                 response_editor.setValue("");
                 $("#response-headers").html("");
@@ -194,6 +204,9 @@ $(function(){
             });
 
         }else{
+            $("#send").removeAttr("disabled");
+            $("#loading").hide();
+            $("#response-editor").show();
             $("#request-alert span.message").html("<strong>Hata!</strong> Girdğiniz istek adresi geçerli bir URL değil.");
             $("#request-alert").show()
         }
