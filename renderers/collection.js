@@ -116,7 +116,9 @@ $(function () {
             $("#tab-headers .header-list").html("");
             $("#tab-headers .header-list").append(create_header_template(element.key, element.value)); 
         });
-        $("#tab-headers .header-list").append(create_header_template()); 
+        if (collection_request_headers.length > 0) {
+            $("#tab-headers .header-list").append(create_header_template()); 
+        }
 
 
         collection_request_parameters.forEach(element => {
@@ -124,7 +126,9 @@ $(function () {
             $("#tab-params .param-list").html("");
             $("#tab-params .param-list").append(create_parameter_template(element.key, element.value));
         });
-        $("#tab-params .param-list").append(create_parameter_template());
+        if (collection_request_parameters.length > 0) {
+            $("#tab-params .param-list").append(create_parameter_template());
+        }
         body_editor.clearSelection();
     });
 
