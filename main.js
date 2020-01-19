@@ -1,6 +1,8 @@
-const { app, BrowserWindow, Menu, shell, ipcMain, ipcRenderer } = require('electron');
+const { app, BrowserWindow, Menu, shell, ipcMain, ipcRenderer, clipboard } = require('electron');
 
 let win;
+
+const isMac = process.platform === 'darwin'
 
 function createWindow () {
   win = new BrowserWindow({
@@ -42,6 +44,17 @@ function createWindow () {
           role: "quit",
           accelerator: "CmdOrCtrl+Q"
         }
+      ]
+    },
+    {
+      label: "Edit",
+      submenu: [
+        { label: "Undo", accelerator: "CmdOrCtrl+Z", selector: "undo:" },
+        { label: "Redo", accelerator: "Shift+CmdOrCtrl+Z", selector: "redo:" },
+        { label: "Cut", accelerator: "CmdOrCtrl+X", selector: "cut:" },
+        { label: "Copy", accelerator: "CmdOrCtrl+C", selector: "copy:" },
+        { label: "Paste", accelerator: "CmdOrCtrl+V", selector: "paste:" },
+        { label: "Select All", accelerator: "CmdOrCtrl+A", selector: "selectAll:" }
       ]
     },
     {
