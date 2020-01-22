@@ -1,6 +1,6 @@
 {
   "name": "guvercin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "rest api client app",
   "main": "main.js",
   "scripts": {
