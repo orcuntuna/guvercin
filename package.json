@@ -49,7 +49,9 @@
       "icon": "./build/"
     },
     "mac": {
-      "target": [ "dmg" ],
+      "target": [
+        "dmg"
+      ],
       "icon": "./images/logo.png"
     }
   }

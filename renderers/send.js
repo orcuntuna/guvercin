@@ -1,10 +1,9 @@
 function validateURL(){
     var url = $("#url").val();
-    if(validate({website: url}, {website: {url: true}}) != undefined){
-        return false;
-    }else{
+    if(url){
         return true;
     }
+    return false;
 }
 
 var response_codes = [
