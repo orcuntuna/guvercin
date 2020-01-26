@@ -68,3 +68,7 @@ section.request-bar,
     color: #fff;
     border-color: transparent;
 }
+
+.xdsoft_autocomplete_dropdown{
+    color: #333;
+}

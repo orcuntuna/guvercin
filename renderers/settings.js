@@ -110,6 +110,11 @@ function setAceOption(user_ace_option) {
     $("#body-content-type option[value='" + user_ace_option + "']").attr("selected", "selected");
 }
 
+function setAceThemeOption(theme_option) {
+    $('#body-editor-theme option:selected').removeAttr('selected');
+    $("#body-editor-theme option[value='" + theme_option + "']").attr("selected", "selected");
+}
+
 $(function () {
 
     user_theme = window.localStorage.getItem("theme");
@@ -121,7 +126,8 @@ $(function () {
         body_editor.setTheme(require('ace-builds/src/theme-tomorrow_night_eighties'));
         response_editor.setTheme(require('ace-builds/src/theme-tomorrow_night_eighties'));
         $('#theme option:selected').removeAttr('selected');
-        $("#theme option[value='dark']").attr("selected", "selected");
+        $("#theme option[value='" + user_theme + "']").attr("selected", "selected");
+        setAceThemeOption("dark");
     }
 
 
@@ -136,12 +142,14 @@ $(function () {
                 window.localStorage.setItem("theme", "dark");
                 body_editor.setTheme(require('ace-builds/src/theme-tomorrow_night_eighties'));
                 response_editor.setTheme(require('ace-builds/src/theme-tomorrow_night_eighties'));
+                setAceThemeOption("dark");
             }
             else if (theme_option == "light") {
                 $("#theme-link").attr("href", "../styles/empty.css");
                 window.localStorage.setItem("theme", "light");
                 body_editor.setTheme(require('ace-builds/src/theme-xcode'));
                 response_editor.setTheme(require('ace-builds/src/theme-xcode'));
+                setAceThemeOption("light");
             }
         }
     });

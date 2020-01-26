@@ -39,7 +39,8 @@
     "request",
     "response",
     "postman",
-    "güvercin"
+    "güvercin",
+    "response"
   ],
   "build": {
     "appId": "com.arkkod.guvercin",
