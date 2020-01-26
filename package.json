@@ -1,6 +1,6 @@
 {
   "name": "guvercin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "rest api client app",
   "main": "main.js",
   "scripts": {
@@ -28,13 +28,33 @@
     "xml-formatter": "^1.2.0"
   },
   "keywords": [
-    "guvercin", "rest", "api", "client", "json", "xml", "post", "get", "request", "response"
+    "guvercin",
+    "rest",
+    "api",
+    "client",
+    "json",
+    "xml",
+    "post",
+    "get",
+    "request",
+    "response",
+    "postman",
+    "güvercin"
   ],
   "build": {
     "appId": "com.arkkod.guvercin",
     "linux": {
-      "target": ["snap", "deb"],
+      "target": [
+        "snap",
+        "deb"
+      ],
       "icon": "./build/"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "icon": "./images/logo.png"
     }
   }
 }
