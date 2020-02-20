@@ -23,11 +23,15 @@ npm start
 
 ## Screenshots
 
-![Guvercin App Request and Response](images/screenshot/screenshot-1.png)
+![Guvercin App Request and Response](images/screenshot/mac_ss_1.png)
 
-![Guvercin App Response Details](images/screenshot/screenshot-2.png)
+![Guvercin App Response Details](images/screenshot/mac_ss_2.png)
 
-![Guvercin App Dark Theme](images/screenshot/screenshot-3.png)
+![Guvercin App Headers Auto Complate](images/screenshot/mac_ss_3.png)
+
+![Guvercin App Templates (light)](images/screenshot/mac_ss_4.png)
+
+![Guvercin App Collection and History](images/screenshot/mac_ss_5.png)
 
 
 ## Author
