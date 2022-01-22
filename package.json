@@ -22,7 +22,7 @@
     "jquery": "^3.4.1",
     "jquery-autocomplete": "^1.2.8",
     "lowdb": "^1.0.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^3.1.1",
     "sweetalert2": "^9.5.4",
     "validate.js": "^0.13.1",
     "xml-formatter": "^1.2.0"
