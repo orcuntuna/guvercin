@@ -11,7 +11,7 @@
   "author": "Arkkod <arkkodcom@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^7.1.7",
+    "electron": "^13.6.6",
     "electron-builder": "^21.2.0",
     "electron-global": "0.0.2"
   },
